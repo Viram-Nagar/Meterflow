@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    /* Prevent body scroll bleed */
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+  }
+}
+
+@layer components {
+  /* Glass card */
+  .glass {
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+  }
+
+  .glass-hover {
+    transition: all 0.2s ease;
+  }
+  .glass-hover:hover {
+    background: rgba(30, 41, 59, 0.98);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 active:bg-brand-700
+           text-white font-medium px-4 py-2 rounded-lg
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           whitespace-nowrap;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-800 hover:bg-surface-700 active:bg-surface-300
+           text-surface-200 font-medium px-4 py-2 rounded-lg
+           border border-surface-700 hover:border-surface-300
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           whitespace-nowrap;
+  }
+
+  .btn-danger {
+    @apply bg-red-600/10 hover:bg-red-600/20 active:bg-red-600/30
+           text-red-400 font-medium px-4 py-2 rounded-lg
+           border border-red-600/20 hover:border-red-600/40
+           transition-all duration-200
+           whitespace-nowrap;
+  }
+
+  /* Input */
+  .input {
+    @apply bg-surface-800 border border-surface-700
+           text-surface-100 placeholder-surface-300
+           rounded-lg px-3 py-2 w-full
+           focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30
+           transition-all duration-200
+           text-sm;
+  }
+
+  /* Card */
+  .card {
+    @apply glass rounded-xl p-4 md:p-5 animate-fade-in;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green {
+    @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/20;
+  }
+  .badge-red {
+    @apply bg-red-500/15     text-red-400     border border-red-500/20;
+  }
+  .badge-yellow {
+    @apply bg-yellow-500/15  text-yellow-400  border border-yellow-500/20;
+  }
+  .badge-blue {
+    @apply bg-brand-500/15   text-brand-400   border border-brand-500/20;
+  }
+  .badge-gray {
+    @apply bg-surface-700/50 text-surface-300 border border-surface-300/30;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* Mobile safe area padding */
+@supports (padding: max(0px)) {
+  .mobile-safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "DM Sans", sans-serif;
+    background: #0f172a;
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+  }
+  .glass-hover {
+    transition: all 0.2s ease;
+  }
+  .glass-hover:hover {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-surface-800 hover:bg-surface-700 text-surface-200 font-medium px-4 py-2 rounded-lg border border-surface-700 hover:border-surface-300 transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-600/10 hover:bg-red-600/20 text-red-400 font-medium px-4 py-2 rounded-lg border border-red-600/20 hover:border-red-600/40 transition-all duration-200;
+  }
+  .input {
+    @apply bg-surface-800 border border-surface-700 text-surface-100 placeholder-surface-300 rounded-lg px-3 py-2 w-full focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-all duration-200;
+  }
+  .card {
+    @apply glass rounded-xl p-5 animate-fade-in;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-green {
+    @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/20;
+  }
+  .badge-red {
+    @apply bg-red-500/15 text-red-400 border border-red-500/20;
+  }
+  .badge-yellow {
+    @apply bg-yellow-500/15 text-yellow-400 border border-yellow-500/20;
+  }
+  .badge-blue {
+    @apply bg-brand-500/15 text-brand-400 border border-brand-500/20;
+  }
+  .badge-gray {
+    @apply bg-surface-700/50 text-surface-300 border border-surface-700/30;
+  }
+} */
