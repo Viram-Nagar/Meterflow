@@ -156,7 +156,7 @@ app.use(`/api/${env.API_VERSION}/webhooks`, webhookRoutes);
 app.use(`/api/${env.API_VERSION}/audit`, auditRoutes);
 
 // Gateway — consumers call: /gateway/:apiId/any/path
-app.use("/gateway", gatewayRoutes);
+app.use(`/api/${env.API_VERSION}/gateway`, gatewayRoutes);
 
 // ── Detailed Health Check (DB status) ────────────────────────────────────────
 app.get(`/api/${env.API_VERSION}/health`, async (req, res) => {
