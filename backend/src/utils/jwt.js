@@ -49,7 +49,7 @@ const setRefreshTokenCookie = (res, token) => {
   res.cookie("refreshToken", token, {
     httpOnly: true, // Cannot be accessed by JavaScript
     secure: env.IS_PRODUCTION, // HTTPS only in production
-    sameSite: "strict", // CSRF protection
+    sameSite: "none", // CSRF protection
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in ms
     path: "/api/v1/auth", // Only sent to auth routes
   });
@@ -59,7 +59,7 @@ const clearRefreshTokenCookie = (res) => {
   res.clearCookie("refreshToken", {
     httpOnly: true,
     secure: env.IS_PRODUCTION,
-    sameSite: "strict",
+    sameSite: "none",
     path: "/api/v1/auth",
   });
 };
