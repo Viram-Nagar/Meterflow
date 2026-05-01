@@ -48,19 +48,21 @@ const generateTokenPair = (user) => {
 const setRefreshTokenCookie = (res, token) => {
   res.cookie("refreshToken", token, {
     httpOnly: true, // Cannot be accessed by JavaScript
-    secure: env.IS_PRODUCTION, // HTTPS only in production
+    secure: true, // HTTPS only in production
     sameSite: "none", // CSRF protection
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in ms
-    path: "/api/v1/auth", // Only sent to auth routes
+    // path: "/api/v1/auth", // Only sent to auth routes
+    path: "/",
   });
 };
 
 const clearRefreshTokenCookie = (res) => {
   res.clearCookie("refreshToken", {
     httpOnly: true,
-    secure: env.IS_PRODUCTION,
+    secure: true,
     sameSite: "none",
-    path: "/api/v1/auth",
+    // path: "/api/v1/auth",
+    path: "/",
   });
 };
 

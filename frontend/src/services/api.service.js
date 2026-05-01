@@ -46,11 +46,12 @@ api.interceptors.response.use(
       isRefreshing = true;
 
       try {
-        const { data } = await axios.post(
-          "/api/v1/auth/refresh",
-          {},
-          { withCredentials: true },
-        );
+        // const { data } = await axios.post(
+        //   "/api/v1/auth/refresh",
+        //   {},
+        //   { withCredentials: true },
+        // );
+        const { data } = await api.post("/auth/refresh", {});
         const newToken = data.data.accessToken;
         localStorage.setItem("accessToken", newToken);
         processQueue(null, newToken);
