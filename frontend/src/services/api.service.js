@@ -46,8 +46,8 @@ api.interceptors.response.use(
       isRefreshing = true;
 
       try {
-        const { data } = await api.post(
-          "/auth/refresh",
+        const { data } = await axios.post(
+          "/api/v1/auth/refresh",
           {},
           { withCredentials: true },
         );
@@ -59,7 +59,7 @@ api.interceptors.response.use(
       } catch (refreshError) {
         processQueue(refreshError, null);
         localStorage.removeItem("accessToken");
-        window.location.replace("/login");
+        window.location.href = "/login";
         return Promise.reject(refreshError);
       } finally {
         isRefreshing = false;
