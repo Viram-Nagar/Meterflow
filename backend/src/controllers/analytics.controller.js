@@ -395,7 +395,7 @@ const getTopEndpoints = async (req, res) => {
         as: "api",
       },
     },
-    { $unwind: { path: "$api", preserveNullAndEmpty: true } },
+    { $unwind: { path: "$api", preserveNullAndEmptyArrays: true } }, // previous preserveNullAndEmpty
     {
       $project: {
         _id: 0,
