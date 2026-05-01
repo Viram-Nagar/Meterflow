@@ -591,7 +591,7 @@ export default function Playground() {
                 </p>
                 <p className="text-xs font-mono text-brand-400 truncate">
                   {window.location.origin}/gateway/{selectedAPI}
-                  {/* https://meterflow-rt2f.onrender.com */}
+                  https://meterflow-rt2f.onrender.com
                   {path}
                 </p>
               </div>
