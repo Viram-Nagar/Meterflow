@@ -385,7 +385,7 @@ export default function Playground() {
     try {
       const result = await axios({
         method,
-        url: `/gateway/${selectedAPI}${path}`,
+        url: `https://meterflow-rt2f.onrender.com/api/v1/gateway/${selectedAPI}${path}`,
         headers: { "X-API-Key": apiKey.trim() },
         data: body && method !== "GET" ? JSON.parse(body) : undefined,
         validateStatus: () => true,
