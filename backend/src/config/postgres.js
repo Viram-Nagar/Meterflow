@@ -1,17 +1,3 @@
-/**
- * @file postgres.js
- * @description PostgreSQL connection pool using node-postgres (pg).
- * Used for:
- * - Billing cycles (ACID compliance for money)
- * - Transactions & payment records
- * - Invoice generation
- *
- * Why PostgreSQL for billing?
- * → ACID transactions prevent double billing
- * → Strong consistency for financial data
- * → Better for relational billing queries
- */
-
 const { Pool } = require("pg");
 const env = require("./env");
 const logger = require("../utils/logger");
@@ -169,11 +155,6 @@ const initializeTables = async () => {
 
 // ── Query Helper ─────────────────────────────────────────────────────────────
 
-/**
- * Execute a query with automatic client management
- * @param {string} text - SQL query
- * @param {Array} params - Query parameters
- */
 const query = async (text, params = []) => {
   const start = Date.now();
   try {
@@ -198,10 +179,6 @@ const query = async (text, params = []) => {
   }
 };
 
-/**
- * Execute queries in a transaction
- * @param {Function} callback - async (client) => { ... }
- */
 const withTransaction = async (callback) => {
   const client = await pool.connect();
   try {

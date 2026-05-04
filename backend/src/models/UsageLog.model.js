@@ -1,9 +1,3 @@
-/**
- * @file UsageLog.model.js
- * @description Every gateway request gets logged here.
- * High write volume — optimized with indexes and TTL.
- */
-
 const mongoose = require("mongoose");
 
 const usageLogSchema = new mongoose.Schema(

@@ -1,16 +1,3 @@
-/**
- * @file AuditLog.model.js
- * @description Audit log for tracking all important user actions.
- * Stored in MongoDB with 1-year TTL.
- *
- * Logged actions:
- * - auth: login, logout, register, password_change
- * - api: create, update, delete, toggle
- * - key: generate, revoke, rotate
- * - billing: plan_upgrade, invoice_paid
- * - webhook: create, delete, test
- */
-
 const mongoose = require("mongoose");
 
 const auditLogSchema = new mongoose.Schema(

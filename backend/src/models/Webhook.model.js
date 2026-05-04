@@ -1,17 +1,3 @@
-/**
- * @file Webhook.model.js
- * @description Webhook configuration model.
- * Owners register webhook URLs to get notified when events happen.
- *
- * Events:
- * - limit.warning     (80% quota used)
- * - limit.exceeded    (100% quota used)
- * - payment.success
- * - payment.failed
- * - key.revoked
- * - api.error_spike   (error rate > 10%)
- */
-
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 

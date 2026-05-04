@@ -1,14 +1,3 @@
-/**
- * @file APIKey.model.js
- * @description Schema for API keys generated for APIs.
- * Each key is given to a consumer to access an API through our gateway.
- *
- * Security model:
- * - Full key shown ONCE on generation (like GitHub tokens)
- * - Only hashed version stored in DB
- * - Key prefix stored for display (mf_live_a8f3...)
- */
-
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 

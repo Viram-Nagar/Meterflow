@@ -1,11 +1,3 @@
-/**
- * @file auth.routes.js
- * @description Authentication routes.
- *
- * PUBLIC  routes → no auth required
- * PRIVATE routes → requires valid JWT (protect middleware)
- */
-
 const express = require("express");
 const router = express.Router();
 

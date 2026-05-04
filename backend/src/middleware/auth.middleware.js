@@ -1,12 +1,3 @@
-/**
- * @file auth.middleware.js
- * @description Authentication and authorization middleware.
- *
- * protect      → validates JWT, attaches user to req.user
- * authorize    → checks user role
- * requirePlan  → checks user plan tier
- */
-
 const { verifyAccessToken } = require("../utils/jwt");
 const User = require("../models/User.model");
 const { sendUnauthorized, sendForbidden } = require("../utils/response");

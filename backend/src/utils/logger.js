@@ -1,12 +1,3 @@
-/**
- * @file logger.js
- * @description Production-grade structured logger using Winston.
- * - Console logs in dev (colorized)
- * - JSON file logs in production (daily rotation)
- * - Separate error log file
- * - All logs include timestamp, level, message
- */
-
 const winston = require("winston");
 const DailyRotateFile = require("winston-daily-rotate-file");
 const path = require("path");

@@ -1,19 +1,3 @@
-/**
- * @file response.js
- * @description Standardized API response helpers.
- * Every endpoint returns the same shape — frontend can rely on this contract.
- *
- * Success shape:  { success: true,  data: {...}, message: "..." }
- * Error shape:    { success: false, error: { code, message, details? } }
- */
-
-/**
- * Send a success response
- * @param {Response} res - Express response object
- * @param {*} data - Response payload
- * @param {string} message - Human readable message
- * @param {number} statusCode - HTTP status code (default 200)
- */
 const sendSuccess = (
   res,
   data = null,

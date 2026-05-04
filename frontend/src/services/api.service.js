@@ -1,7 +1,3 @@
-/**
- * @file api.service.js
- * @description Axios instance with interceptors for auth + error handling.
- */
 import axios from "axios";
 import toast from "react-hot-toast";
 

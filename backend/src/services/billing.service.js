@@ -1,19 +1,3 @@
-/**
- * @file billing.service.js
- * @description Core billing engine.
- *
- * Responsibilities:
- * 1. Calculate usage cost per user per billing cycle
- * 2. Create / update billing cycles in PostgreSQL
- * 3. Generate invoices
- * 4. Check and apply free quota
- *
- * Pricing Model:
- * Free plan  → 1,000 req/month free → ₹0 after limit (blocked)
- * Pro plan   → 10,000 req/month free → ₹0.50 per 100 req after
- * Enterprise → 50,000 req/month free → ₹0.30 per 100 req after
- */
-
 const { query, withTransaction } = require("../config/postgres");
 const UsageLog = require("../models/UsageLog.model");
 const User = require("../models/User.model");

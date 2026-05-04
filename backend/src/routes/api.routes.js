@@ -1,9 +1,3 @@
-/**
- * @file api.routes.js
- * @description Routes for API management and key operations.
- * All routes require authentication (protect middleware).
- */
-
 const express = require("express");
 const router = express.Router();
 

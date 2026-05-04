@@ -1,11 +1,3 @@
-/**
- * @file error.middleware.js
- * @description Global error handling middleware.
- * Catches ALL errors thrown anywhere in the app.
- * Maps error types to correct HTTP status codes.
- * Never leaks stack traces in production.
- */
-
 const logger = require("../utils/logger");
 const { sendError } = require("../utils/response");
 const env = require("../config/env");

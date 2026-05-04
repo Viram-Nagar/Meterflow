@@ -1,13 +1,3 @@
-/**
- * @file db.js
- * @description MongoDB connection manager using Mongoose.
- * Features:
- * - Connection with retry logic
- * - Graceful disconnect on shutdown
- * - Connection event logging
- * - Index creation on startup
- */
-
 const mongoose = require("mongoose");
 const env = require("./env");
 const logger = require("../utils/logger");
@@ -55,10 +45,6 @@ mongoose.connection.on("reconnected", () => {
 
 // ── Connect Function ─────────────────────────────────────────────────────────
 
-/**
- * Connect to MongoDB with retry logic
- * @param {number} retries - Number of retry attempts
- */
 const connectMongoDB = async (retries = 5) => {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {

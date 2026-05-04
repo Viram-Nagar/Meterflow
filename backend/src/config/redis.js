@@ -1,13 +1,3 @@
-/**
- * @file redis.js
- * @description Redis client using ioredis.
- * Used for:
- * - Rate limiting (sliding window counters)
- * - API key caching (avoid DB hit on every request)
- * - Session/token blacklisting
- * - BullMQ job queue backend
- */
-
 const Redis = require("ioredis");
 const env = require("./env");
 const logger = require("../utils/logger");

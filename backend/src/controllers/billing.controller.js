@@ -1,14 +1,3 @@
-/**
- * @file billing.controller.js
- * @description Billing API endpoints.
- *
- * GET  /api/v1/billing/current     → Current cycle usage + bill
- * GET  /api/v1/billing/history     → Past billing cycles
- * GET  /api/v1/billing/invoice/:id → Specific invoice
- * GET  /api/v1/billing/plans       → Available pricing plans
- * POST /api/v1/billing/calculate   → Preview bill calculation
- */
-
 const {
   calculateBill,
   getInvoiceData,

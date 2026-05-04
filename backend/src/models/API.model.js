@@ -1,9 +1,3 @@
-/**
- * @file API.model.js
- * @description Schema for APIs registered by owners on MeterFlow.
- * An API is the service the owner wants to proxy and monetize.
- */
-
 const mongoose = require("mongoose");
 
 const apiSchema = new mongoose.Schema(

@@ -1,15 +1,3 @@
-/**
- * @file webhook.service.js
- * @description Webhook delivery service.
- *
- * When an event happens (e.g. limit exceeded):
- * 1. Find all active webhooks for that user + event
- * 2. Sign the payload with HMAC-SHA256
- * 3. POST to webhook URL with 5s timeout
- * 4. Retry up to 3 times on failure
- * 5. Update delivery stats
- */
-
 const axios = require("axios");
 const crypto = require("crypto");
 const Webhook = require("../models/Webhook.model");

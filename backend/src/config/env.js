@@ -1,9 +1,3 @@
-/**
- * @file env.js
- * @description Centralized environment variable config with validation.
- * App crashes on startup if required vars are missing — fail fast principle.
- */
-
 const requiredVars = [
   "MONGODB_URI",
   "JWT_ACCESS_SECRET",

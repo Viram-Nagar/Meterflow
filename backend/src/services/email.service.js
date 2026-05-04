@@ -1,16 +1,3 @@
-/**
- * @file email.service.js
- * @description Email notification service using Nodemailer.
- *
- * Sends emails for:
- * - Welcome on register
- * - Quota warning (80% used)
- * - Quota exceeded (100% used)
- * - Invoice generated
- * - Payment success
- * - Payment failed
- */
-
 const nodemailer = require("nodemailer");
 const env = require("../config/env");
 const logger = require("../utils/logger");

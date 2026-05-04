@@ -1,14 +1,3 @@
-/**
- * @file analytics.controller.js
- * @description Usage analytics endpoints.
- *
- * GET /api/v1/analytics/overview     → Total stats summary
- * GET /api/v1/analytics/usage        → Usage over time (chart data)
- * GET /api/v1/analytics/latency      → Latency percentiles
- * GET /api/v1/analytics/errors       → Error breakdown
- * GET /api/v1/analytics/top-endpoints → Most used endpoints
- */
-
 const UsageLog = require("../models/UsageLog.model");
 const mongoose = require("mongoose");
 const { sendSuccess } = require("../utils/response");

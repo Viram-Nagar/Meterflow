@@ -1,8 +1,3 @@
-/**
- * @file User.model.js
- * @description User schema for MongoDB.
- */
-
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 

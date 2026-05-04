@@ -1,17 +1,3 @@
-/**
- * @file apiKeyGen.js
- * @description Secure API key generation utility.
- *
- * Key format:  mf_live_<32 random hex chars>
- * Example:     mf_live_a8f3k2x9p1q7r4s6b5n8m3c6d1e4f7
- *
- * Security:
- * - Generated using crypto.randomBytes (cryptographically secure)
- * - Full key shown ONCE, never stored
- * - SHA-256 hash stored in DB for lookup
- * - Only prefix stored for UI display
- */
-
 const crypto = require("crypto");
 
 /**

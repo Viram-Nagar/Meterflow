@@ -1,16 +1,3 @@
-/**
- * @file webhook.controller.js
- * @description Webhook management endpoints.
- *
- * POST   /api/v1/webhooks          → Create webhook
- * GET    /api/v1/webhooks          → List webhooks
- * GET    /api/v1/webhooks/:id      → Get webhook
- * PATCH  /api/v1/webhooks/:id      → Update webhook
- * DELETE /api/v1/webhooks/:id      → Delete webhook
- * POST   /api/v1/webhooks/:id/test → Test webhook
- * GET    /api/v1/audit             → Get audit logs
- */
-
 const Webhook = require("../models/Webhook.model");
 const { testWebhook } = require("../services/webhook.service");
 const { audit, getAuditLogs } = require("../services/audit.service");

@@ -1,19 +1,3 @@
-/**
- * @file billing.job.js
- * @description BullMQ background job for billing processing.
- *
- * Why background jobs?
- * → Billing calculation is heavy — runs for ALL users
- * → Cannot block HTTP requests
- * → Runs on schedule (daily at midnight)
- * → Retries automatically on failure
- *
- * Job Types:
- * 1. process-user-billing  → Calculate bill for one user
- * 2. process-all-billing   → Queue billing for all users
- * 3. mark-cycle-complete   → Close monthly billing cycle
- */
-
 const { Queue, Worker, QueueEvents } = require("bullmq");
 const { redis } = require("../config/redis");
 const { processUserBilling } = require("../services/billing.service");

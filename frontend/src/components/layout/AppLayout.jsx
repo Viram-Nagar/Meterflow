@@ -1,12 +1,3 @@
-/**
- * @file AppLayout.jsx
- * @description Main app layout — responsive for mobile/tablet/desktop.
- *
- * Mobile  (<768px):  No sidebar. Top navbar with hamburger menu. Full width content.
- * Tablet  (768-1024): Collapsible sidebar (icons only when collapsed).
- * Desktop (>1024px): Full sidebar always visible.
- */
-
 import { useState } from "react";
 import { Outlet, Navigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
@@ -65,23 +56,3 @@ function MobileTopBar({ onMenuClick }) {
     </div>
   );
 }
-
-// import { Outlet, Navigate } from "react-router-dom";
-// import Sidebar from "./Sidebar";
-// import useAuthStore from "../../store/authStore";
-
-// export default function AppLayout() {
-//   const { isAuthenticated } = useAuthStore();
-//   if (!isAuthenticated) return <Navigate to="/login" replace />;
-
-//   return (
-//     <div className="flex min-h-screen bg-surface-950">
-//       <Sidebar />
-//       <main className="flex-1 overflow-auto">
-//         <div className="p-6 max-w-7xl mx-auto animate-fade-in">
-//           <Outlet />
-//         </div>
-//       </main>
-//     </div>
-//   );
-// }
